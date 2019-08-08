@@ -6,40 +6,46 @@ const Reducer = (state = { data: [] }, action) => {
                 data: action.payload
             };
         }
-        case 'POST_DATA':{
+        case 'POST_DATA': {
             return state = {
                 ...state,
-                otpdata:action.payload
+                otpdata: action.payload
             };
         }
-        case 'VERIFY_OTP':{
+        case 'VERIFY_OTP': {
             return state = {
                 ...state,
-                verifyotp:action.payload
+                verifyotp: action.payload
             };
         }
-        case 'PINCODE':{
-            return state={
+        case 'PINCODE': {
+            return state = {
                 ...state,
-                pincodeMaster:action.payload
+                pincodeMaster: action.payload
             }
         }
-        case 'COMPANY_NAME':{
-            return state={
+        case 'COMPANY_NAME': {
+            return state = {
                 ...state,
-                companyMaster:action.payload
+                companyMaster: action.payload
             }
         }
-        case 'DATABASE':{
-            return state={
+        case 'DATABASE': {
+            return state = {
                 ...state,
-                details:action.payload
+                details: action.payload
             }
         }
-        case 'GET_DATA':{
-            return state={
+        case 'GET_DATA': {
+            return state = {
                 ...state,
-                table_data:action.payload
+                table_data: action.payload
+            }
+        }
+        case 'GET OFFERS': {
+            return state = {
+                ...state,
+                offerlist_data: action.payload
             }
         }
         default:

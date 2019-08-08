@@ -46,6 +46,12 @@ export const get_database=(data)=>{
         payload:data
     }
 }
+export const get_offerlist=(data)=>{
+    return{
+        type:'GET OFFERS',
+        payload:data
+    }
+}
 
 export const get_formdata = () => {
     var url;
@@ -161,6 +167,17 @@ export const db_get=(leadID)=>{
         axios.get(`http://localhost:8000/get_details/${leadID}`).then((res)=>{
             console.log(res.data);
             dispatch(get_database(res.data));
+        }).catch((err)=>{
+            console.log(err);
+            return err;
+        })
+    }
+}
+export const offerlisting=()=>{
+    return dispatch=>{
+        axios.get('https://pre-prod-cms.onebajaj.capital/services/api/offers-list/?_format=json').then((res)=>{
+            console.log(res.data);
+            dispatch(get_offerlist(res.data));
         }).catch((err)=>{
             console.log(err);
             return err;
